@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TestResults>
+  <Summary>
+    <ProcedureName>32G LEQ Rx Jitter Tolerance Test</ProcedureName>
+    <ProcedureID>438411</ProcedureID>
+    <Result>Passed</Result>
+    <DateTime>11/17/2022 5:08:50 PM</DateTime>
+  </Summary>
+  <DocumentElement>
+    <Parameters>
+      <Name>----​​​Impairments----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Jitter Eye Adjustment Mode</Name>
+      <Value>Asic</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Differential Voltage</Name>
+      <Value>800 mV</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Common Mode Interference</Name>
+      <Value>150 mV</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Differential Mode Interference</Name>
+      <Value>10 mV</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Random Jitter</Name>
+      <Value>500 fs</Value>
+    </Parameters>
+    <Parameters>
+      <Name>2nd Tone Sinusoidal Jitter</Name>
+      <Value>0 s</Value>
+    </Parameters>
+    <Parameters>
+      <Name>2nd Tone Sinusoidal Jitter Frequency</Name>
+      <Value>210 MHz</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Residual Sinusoidal SSC</Name>
+      <Value>1 ns</Value>
+    </Parameters>
+    <Parameters>
+      <Name>RJ Low Pass Filter Frequency</Name>
+      <Value>500 MHz</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Use Compliance Impairments</Name>
+      <Value>True</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----General----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Offline</Name>
+      <Value>True</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----Channel----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Trace Number</Name>
+      <Value>35</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Total Channel Loss</Name>
+      <Value>-100 dB</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----​​​​BER Measurement----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>BER Mode</Name>
+      <Value>FixedTime</Value>
+    </Parameters>
+    <Parameters>
+      <Name>BER Measurement Duration</Name>
+      <Value>313 ms</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Allowed Bit Error</Name>
+      <Value>5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Abort BER Measurement when failed</Name>
+      <Value>False</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Relax Time</Name>
+      <Value>3 s</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----​​​​​​​​​​​​​​​​​Loopback Training----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Force retraining on each frequency</Name>
+      <Value>False</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Enable Impairments during Loopback Training</Name>
+      <Value>True</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Interactive Training Script File </Name>
+      <Value>C:\ProgramData\BitifEye\ValiFrameK1\PCIe\Settings\TrainingScripts\Pcie5_32G_M8040A_ILT_Loopback.txt</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Suppress Loopback Training Messages</Name>
+      <Value>False</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----​​​​​​​​​​​​Sinusoidal Jitter Variation----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Search Algorithm</Name>
+      <Value>Linear with 2 step sizes</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Frequency mode</Name>
+      <Value>Compliance Frequencies</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Use fixed number of steps</Name>
+      <Value>False</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Show min failed points</Name>
+      <Value>True</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----​​​​​​​​​​​​​​​​​​​Generator Clock----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Data Rate Deviation</Name>
+      <Value>0 ppm</Value>
+    </Parameters>
+    <Parameters>
+      <Name>32 GT/s Use SSC</Name>
+      <Value>True</Value>
+    </Parameters>
+    <Parameters>
+      <Name>SSC Frequency</Name>
+      <Value>33 kHz</Value>
+    </Parameters>
+    <Parameters>
+      <Name>32 GT/s Sinusoidal SSC Spur</Name>
+      <Value>0 s</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----​​​​​​​​​​​​​​​​Interactive Link Training----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Training through</Name>
+      <Value>L0-Recovery</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Generator Full Swing</Name>
+      <Value>24</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Training Lane</Name>
+      <Value>Lane0</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Generator Start Preset</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>DUT Initial Preset</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>DUT Target Preset</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Select Start Preset Gen4</Name>
+      <Value>User Defined</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Generator Start Preset Gen4</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>DUT Initial Preset Gen4</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>DUT Target Preset Gen4</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Select Start Preset Gen5</Name>
+      <Value>User Defined</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Generator Start Preset Gen5</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>DUT Initial Preset Gen5</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>DUT Target Preset Gen5</Name>
+      <Value>P5</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Drop Link Method</Name>
+      <Value>LTSSM</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----​​​​​​​​​​​​​​​Error Detector----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Fast Alignment</Name>
+      <Value>False</Value>
+    </Parameters>
+    <Parameters>
+      <Name>CDR Loop Bandwidth</Name>
+      <Value>20 MHz</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Analyzer Equalization</Name>
+      <Value>80</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Use Auto Analyzer Equalization</Name>
+      <Value>False</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Input Range for Loopback Training</Name>
+      <Value>600 mV</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Input Range</Name>
+      <Value>600 mV</Value>
+    </Parameters>
+    <Parameters>
+      <Name>CDR Loop Selection</Name>
+      <Value>Loop1</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Polarity</Name>
+      <Value>Normal</Value>
+    </Parameters>
+    <Parameters>
+      <Name>Manually align error detector sampling point.</Name>
+      <Value>False</Value>
+    </Parameters>
+    <Parameters>
+      <Name>----Instruments----</Name>
+      <Value />
+    </Parameters>
+    <Parameters>
+      <Name>Measurement Instrument 1</Name>
+      <Value>Name: Keysight M8040A J-BERT ; Company: Keysight Technologies ; Model: Keysight M8040A J-BERT ; SN: Unknown ; FW rev.: Unknown ; Description: M8040 with integrated jitter sources for BER tests ; Measurement Instrument</Value>
+    </Parameters>
+  </DocumentElement>
+  <Data>
+    <ColumnHeader>|Result|SJ Frequency|Min Failed Jitter|Max Passed Jitter|Setup Capability|Min Spec|Margin|Final Generator Preset|Final Generator Cursors|Final Generator Pre-shoot|Final Generator De-emphasis|</ColumnHeader>
+    <Values>|pass|400000|1.3972E-09|1.3972E-09|1.3972E-09|4.92653350356992E-10|183.607124357836|P4|(0, 24, 0)|0|0|</Values>
+    <Values>|pass|1000000|4.653E-10|4.653E-10|4.653E-10|9.38116441088212E-11|395.993865601858|P4|(0, 24, 0)|0|0|</Values>
+    <Values>|pass|2000000|2.025E-10|2.025E-10|2.025E-10|4.27068356045758E-11|374.162969775975|P4|(0, 24, 0)|0|0|</Values>
+    <Values>|pass|4000000|8.81E-11|8.81E-11|8.81E-11|1.94418701930069E-11|353.14570627927|P4|(0, 24, 0)|0|0|</Values>
+    <Values>|pass|10000000|2.4E-11|2.4E-11|2.4E-11|6.87000016225593E-12|249.344969915096|P4|(0, 24, 0)|0|0|</Values>
+    <Values>|pass|20000000|2.4E-11|2.4E-11|2.4E-11|3.125E-12|668|P4|(0, 24, 0)|0|0|</Values>
+    <Values>|pass|40000000|2.4E-11|2.4E-11|2.4E-11|3.125E-12|668|P4|(0, 24, 0)|0|0|</Values>
+    <Values>|pass|100000000|2.4E-11|2.4E-11|2.4E-11|3.125E-12|668|P4|(0, 24, 0)|0|0|</Values>
+  </Data>
+</TestResults>

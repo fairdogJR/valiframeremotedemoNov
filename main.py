@@ -1,9 +1,7 @@
 import sys
+import clr
 import platform
-import string
-import platform
-
-#import pcievaliframeTemplate
+import os
 
 print(platform.python_version())
 print(platform.architecture())
@@ -61,7 +59,7 @@ AutoCloseScript = True
 
 ############################################ Import .NET Namespaces ###########################################
 
-import clr
+
 
 if ValiFrameDllDirectory != None:
     sys.path.append(ValiFrameDllDirectory)
@@ -137,8 +135,14 @@ def StatusChangedHandler(sender, description):
 def ProcedureCompletedHandler(procedureId, xmlResult):
     print('Procedure %d is complete' % procedureId)
     ScriptLog('Saving XML result to file...')
+
+    nameindex = 0
+    while os.path.exists("result%s.xml" % nameindex):
+     nameindex += 1
+
     if ValiFrameXmlResultFile != None:
-        with open(ValiFrameXmlResultFile, 'w') as file:
+        with open("result%s.xml" % nameindex, 'w', encoding="utf-8") as file:
+        #with open(ValiFrameXmlResultFile, 'w', encoding="utf-8") as file:
             file.write(xmlResult)
     showXml = ShowXmlPreference
     if showXml == None:
@@ -446,7 +450,6 @@ try:
     InitApplication(valiFrame, applicationName)
 
     dump_propertieslist()
-
     #Method 2 configuration, load a pre-saved Dut configuration
     #loading all speeds checked  addin  asic expert mode (to expose more tests)
     valiFrame.LoadProject(r'C:\valiframe_projects\pcie5expert32g.vfp')
@@ -461,14 +464,11 @@ try:
     dump_propertieslist()
     #breakpoint()
 
-    #ChangePropertiesBeforeConfiguration(valiFrame)
-    #ConfigureApplication(valiFrame)
-    #ChangePropertiesAfterConfiguration(valiFrame)
-
+    #
     valiFrame.ConfigureProductNoDialog()
 
 
-    #-------This lists available tests and calibrations-------------------
+    #-------lists available procedures (tests and calibrations)-------------------
     print("--------->Demo: Accessing Procedure name list")
     #breakpiont()
     procedureIds, procedureNames = GetAvailableProcedures(valiFrame)
@@ -480,7 +480,7 @@ try:
     #--------------------------
 
     #breakpoint()# break here to try out
-    procId=[] #make a list of procedures
+    procId=[] #make a list of procedures to run
     #pick a procedure
     procId.append(438410) #- 438410: "32G LEQ Rx Compliance Test"
     #read procedure properties
@@ -503,6 +503,7 @@ try:
     print ("------->End of - 438414: 32G LEQ Rx Sensitivity Test properties")
 
     #Change related property
+    #there is only one command for changing properties
     propertyKey='Repetitions'
     newValue='5'
     valiFrame.SetProcedureProperty(procId[1], propertyKey, newValue)
@@ -510,7 +511,7 @@ try:
     #how to access the global repetitions?
 
     #what about use ssc
-
+    #If "That is a global related property" does that get changed for all if set for one hierarchy procedure?
     relatedProps=[]
     for x in range (len (procId)):
             relatedProps.append (GetAvailableRelatedProperties(valiFrame, procId[x]))
@@ -518,26 +519,28 @@ try:
     #lesson to learn Always check for the specific test
     #breakpoint()
 
+
     # what about use ssc? this is a related parameter at the top leve of the hierarchy, can I set it and is it seen as global for the whole hierarchy?
     #Change related property
     propertyKey='32 GT/s Use SSC'
     newValue='True'
     valiFrame.SetProcedureProperty(procId[0], propertyKey, newValue)
 
+
     relatedProps = []
     for x in range(len(procId)):
         relatedProps.append(GetAvailableRelatedProperties(valiFrame, procId[x]))
-    # break here to if use ssc sticks in the procId[0] was set but the other related properties show repetitions of 0
-    #in addition a dictionary can only have a unique Key so the global repeated name wont be used i assume?
-    #YES it sets it and sets it globally
+    # break here to see that ssc is set in each procedure in the procId[0]
+    #YES it sets it and sets it globally , "Repetitions" entry seems to be a special case and needs to be set locally for each procedure
     #breakpoint()
 
 
-    # TODO add precedure properties and related properties
+
     #RunProcedures(valiFrame)
     valiFrame.RunProcedure(procId[0])
+    valiFrame.RunProcedure(procId[1])
 
-    #breakpoint()
+    #this will run the procedure and in completion, ProcedureCompletedHandler is the place you should access the results or store them to a file
 
     UnregisterEventHandlers(valiFrame)
 
